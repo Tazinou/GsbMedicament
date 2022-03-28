@@ -1,0 +1,84 @@
+﻿<Page x:Class="GsbMedicament.Vues.GestionMedicaments"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GsbMedicament.Vues"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GestionMedicaments" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190"></ColumnDefinition>
+            <ColumnDefinition Width="190"/>
+            <ColumnDefinition Width="190"></ColumnDefinition>
+            <ColumnDefinition Width="190"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="white" Offset="0"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <TextBlock Text="Gestion des Médicaments" FontSize="40" FontFamily="Calibri" TextAlignment="Center" Grid.Row="0" Grid.ColumnSpan="4"></TextBlock>
+        <TextBlock Text="Liste des Médicaments : " Grid.Row="4" FontFamily="ImpaCalibrict" FontSize="20"></TextBlock>
+        <ComboBox Name="cboAllMedicaments" Grid.Row="4" Grid.Column="1" Height="30" Width="160" SelectionChanged="cboAllMedicaments_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding nomMedicament}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Text="Depot Legal" Grid.Row="1" Grid.Column="2" FontFamily="Calibri" FontSize="20" TextAlignment="Center"></TextBlock>
+        <TextBox Name="TxtDepotLegal" Grid.Row="1" Grid.Column="3" Height="30" Width="160"></TextBox>
+
+        <TextBlock Text="Nom" Grid.Row="2" Grid.Column="2" FontFamily="Calibri" FontSize="20" TextAlignment="Center"></TextBlock>
+        <TextBox Name="TxtNom" Grid.Row="2" Grid.Column="3" Height="30" Width="160"></TextBox>
+
+        <TextBlock Text="Famille" Grid.Row="3" Grid.Column="2" FontFamily="Calibri" FontSize="20" TextAlignment="Center"></TextBlock>
+        <WrapPanel Grid.Row="3" Grid.Column="3">
+            <TextBlock Width="104"></TextBlock>
+            <ComboBox Name="cboFamille" Width="238">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding LibelleFamille}" Width="200"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </WrapPanel>
+
+        <TextBlock Text="Composition" Grid.Row="4" Grid.Column="2" FontFamily="Calibri" FontSize="20" TextAlignment="Center"></TextBlock>
+        <TextBox Name="TxtCompo" Grid.Row="4" Grid.Column="3" Height="30" Width="160"></TextBox>
+
+        <TextBlock Text="Effets" Grid.Row="5" Grid.Column="2" FontFamily="Calibri" FontSize="20" TextAlignment="Center"></TextBlock>
+        <TextBox Name="TxtEffets" Grid.Row="5" Grid.Column="3" Height="30" Width="160"></TextBox>
+
+        <TextBlock Text="Contre Indication" Grid.Row="6" Grid.Column="2" FontFamily="Calibri" FontSize="20" TextAlignment="Center"></TextBlock>
+        <TextBox Name="TxtContreIndic" Grid.Row="6" Grid.Column="3" Height="30" Width="160"></TextBox>
+
+        <TextBlock Text="Prix" Grid.Row="7" Grid.Column="2" FontFamily="Calibri" FontSize="20" TextAlignment="Center"></TextBlock>
+        <TextBox Name="TxtPrix" Grid.Row="7" Grid.Column="3" Height="30" Width="160"></TextBox>
+
+        <Button Name="btnModifierMedicament" Click="btnModifierMedicament_Click" Content="Modifier" Grid.Row="8" Grid.Column="2"></Button>
+        <Button Name="btnAjouterMedicament" Click="btnAjouterMedicament_Click" Content="Ajouter" Grid.Row="8" Grid.Column="3"></Button>
+    </Grid>
+</Page>
